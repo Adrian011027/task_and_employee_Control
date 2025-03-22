@@ -1,0 +1,152 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #ffffff;
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: 85%;
+}
+
+/* Animación de entrada en cascada */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  /* Estado final cuando el elemento ya está visible */
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+/* Título */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+/* Estilo general de los modales */
+.modal {
+    display: none;  /* Los modales están ocultos por defecto */
+    
+    /* Otros estilos como bordes, sombras, etc. */
+}
+
+.modal.active {
+    display: flex; /* Se muestra el modal cuando tiene la clase active */
+
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        border-radius: 10px;
+        
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+        text-align: left;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85%;
+      
+}
+
+.modal h2 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+}
+
+button {
+    font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+    font-size: 1rem;
+    align-items: center;
+    height: 30px;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    padding: 0 1.2rem;
+    color: #ddd;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    background: #000000;
+  }
+
+  button:hover {
+    background: #2b2a2a;
+  }
+  
+.delete-button{
+    background-color: rgb(185, 25, 25);
+    color: white;
+}
+
+/* ============================================= */
+/* ESTILOS PARA LOS BOTONES DE GESTIÓN */
+/* ============================================= */
+
+.gestion-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 20px;
+    
+}
+
+/* Estilo idéntico a los botones del menú */
+.menu-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 300px; /* Ajustado para gestión */
+    height: 150px; /* Ajustado para gestión */
+    padding: 15px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.menu-option:hover {
+    background-color: #eaeaea;
+    transform: translateY(-3px);
+}
+
+/* Contenedor de imagen en los botones */
+.card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.card-image img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Texto dentro de los botones */
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}

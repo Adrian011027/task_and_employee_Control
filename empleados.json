@@ -1,0 +1,303 @@
+[
+  {
+    "nombre": "Eduardo",
+    "puesto": "Mesero",
+    "tareas_asignadas": {
+      "lunes": [
+        {
+          "id": 1,
+          "nombre": "Realizar Backend",
+          "descripcion": "Backend",
+          "hora": [
+            "07:30",
+            "15:30"
+          ],
+          "estatus": 0
+        }
+      ],
+      "martes": [
+        {
+          "id": 2,
+          "nombre": "Realizar FrontEnd",
+          "descripcion": "FrontEnd",
+          "hora": [
+            "07:15",
+            "12:30"
+          ],
+          "estatus": 2
+        }
+      ],
+      "miercoles": [
+        {
+          "id": 1,
+          "nombre": "Realizar Backend",
+          "descripcion": "Backend",
+          "hora": [
+            "07:03",
+            "15:30"
+          ],
+          "estatus": 2
+        },
+        {
+          "id": 3,
+          "nombre": "Pruebas",
+          "descripcion": "FrontEnd",
+          "hora": [
+            "07:15",
+            "08:30"
+          ],
+          "estatus": 0
+        },
+        {
+          "id": 5,
+          "nombre": "Trapear",
+          "descripcion": "Backend",
+          "hora": [
+            "11:00",
+            "15:30"
+          ],
+          "estatus": 1
+        }
+      ],
+      "jueves": [
+        {
+          "id": 2,
+          "nombre": "Realizar FrontEnd",
+          "descripcion": "FrontEnd",
+          "hora": [
+            "07:15",
+            "12:30"
+          ],
+          "estatus": 0
+        }
+      ],
+      "viernes": [
+        {
+          "id": 4,
+          "nombre": "Barrer",
+          "descripcion": "Backend",
+          "hora": [
+            "10:00",
+            "15:30"
+          ],
+          "estatus": 3
+        }
+      ],
+      "sabado": [],
+      "domingo": []
+    },
+    "id": 2,
+    "imagen": "perritou2.png"
+  },
+  {
+    "nombre": "Jonathan",
+    "puesto": "Developer",
+    "tareas_asignadas": {
+      "lunes": [
+        {
+          "id": 1,
+          "nombre": "Cobrar salarios",
+          "descripcion": "Cobrar",
+          "hora": [
+            "07:00",
+            "11:30"
+          ],
+          "estatus": 0
+        }
+      ],
+      "martes": [
+        {
+          "id": 1,
+          "nombre": "Cobrar salarios",
+          "descripcion": "Cobrar",
+          "hora": [
+            "07:00",
+            "11:30"
+          ],
+          "estatus": 2
+        }
+      ],
+      "miercoles": [
+        {
+          "id": 2,
+          "nombre": "Depositar",
+          "descripcion": "Realizar Deposito",
+          "hora": [
+            "07:15",
+            "09:00"
+          ],
+          "estatus": 1
+        },
+        {
+          "id": 4,
+          "nombre": "Conectarse Online",
+          "descripcion": "Conectarse",
+          "hora": [
+            "07:30",
+            "09:00"
+          ],
+          "estatus": 0
+        }
+      ],
+      "jueves": [
+        {
+          "id": 6,
+          "nombre": "Cobrar salarios",
+          "descripcion": "Cobrar",
+          "hora": [
+            "07:00",
+            "09:30"
+          ],
+          "estatus": 3
+        }
+      ],
+      "viernes": [
+        {
+          "id": 3,
+          "nombre": "Llamada",
+          "descripcion": "llamar",
+          "hora": [
+            "07:00",
+            "11:30"
+          ],
+          "estatus": 1
+        }
+      ],
+      "sabado": [],
+      "domingo": []
+    },
+    "id": 3,
+    "imagen": "perritou.jpg"
+  },
+  {
+    "nombre": "Angel",
+    "puesto": "Desarrollador",
+    "tareas_asignadas": {
+      "lunes": [
+        {
+          "id": 1,
+          "nombre": "Transferir",
+          "descripcion": "Dinero",
+          "hora": [
+            "07:15",
+            "08:00"
+          ],
+          "estatus": 2
+        },
+        {
+          "id": 2,
+          "nombre": "Conectarse Online",
+          "descripcion": "Conectarse",
+          "hora": [
+            "07:30",
+            "09:00"
+          ],
+          "estatus": 2
+        }
+      ],
+      "martes": [
+        {
+          "id": 1,
+          "nombre": "Transferir",
+          "descripcion": "Dinero",
+          "hora": [
+            "07:15",
+            "08:00"
+          ],
+          "estatus": 0
+        },
+        {
+          "id": 2,
+          "nombre": "Conectarse Online",
+          "descripcion": "Conectarse",
+          "hora": [
+            "07:30",
+            "09:00"
+          ],
+          "estatus": 2
+        }
+      ],
+      "miercoles": [
+        {
+          "id": 1,
+          "nombre": "Transferir",
+          "descripcion": "Dinero",
+          "hora": [
+            "07:15",
+            "08:00"
+          ],
+          "estatus": 2
+        },
+        {
+          "id": 2,
+          "nombre": "Conectarse Online",
+          "descripcion": "Conectarse",
+          "hora": [
+            "07:30",
+            "09:00"
+          ],
+          "estatus": 2
+        },
+        {
+          "id": 5,
+          "nombre": "Codear",
+          "descripcion": "Dinero",
+          "hora": [
+            "07:15",
+            "08:00"
+          ],
+          "estatus": 1
+        }
+      ],
+      "jueves": [
+        {
+          "id": 1,
+          "nombre": "Conectarse Online",
+          "descripcion": "Conectarse",
+          "hora": [
+            "07:30",
+            "09:00"
+          ],
+          "estatus": 2
+        }
+      ],
+      "viernes": [
+        {
+          "id": 1,
+          "nombre": "Transferir",
+          "descripcion": "Dinero",
+          "hora": [
+            "07:15",
+            "08:00"
+          ],
+          "estatus": 2
+        },
+        {
+          "id": 2,
+          "nombre": "Conectarse Online",
+          "descripcion": "Conectarse",
+          "hora": [
+            "07:30",
+            "09:00"
+          ],
+          "estatus": 2
+        }
+      ],
+      "sabado": [
+        {
+          "id": 1,
+          "nombre": "Conectarse Online",
+          "descripcion": "Conectarse",
+          "hora": [
+            "07:30",
+            "09:00"
+          ],
+          "estatus": 2
+        }
+      ],
+      "domingo": []
+    },
+    "id": 4,
+    "imagen": "angel.jpg"
+  }
+]

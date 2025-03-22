@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/web/gestion/gestion.css">
+  <link rel="stylesheet" href="/web/menu/menu.css">
+  
+  <script src="/web/gestion/gestion.js" type="module" defer></script>
+  <script src="/web/menu/menu.js" defer></script>
+  <script src="/web/Gestion/Crear Empleado/crear.js" type="module" src=""></script>
+  <script src="/web/gestion/Editar Empleado/Crear tareas/crear_tarea.js" type="module" defer></script>
+  <script src="/web/gestion/Editar Empleado/Editar Tarea/editar_tarea.js" type="module" defer></script>
+  <script src="/web/gestion/Editar Empleado/Editar Tarea/editar_tarea_send.js" type="module" defer></script>
+  <script src="/web/gestion/Editar Empleado/Datos Personales/datos_del_empleado.js" type="module" defer></script>
+  <script src="/web/Gestion/Eliminar Empleado/eliminar_empleado.js" type="module" defer></script>
+  <script src="/web/Gestion/Registrar Equipo/registrar.js" type="module" defer></script>
+  
+  <title>Gestión de Empleados</title>
+</head>
+<body>
+
+  <!-- Menú superior (opcional) -->
+  <div id="menu-container"></div>
+
+  <!-- Contenedor principal que siempre se ve -->
+  <div class="container">
+
+    <!-- Subcontenedor al que se aplicará la animación. 
+         NOTA: Le ponemos la clase "fade-in" y luego .show via JS -->
+    <div id="contenido-fade" class="fade-in">
+
+      <!-- MENÚ PRINCIPAL: 3 opciones visibles al inicio -->
+      <div class="gestion-buttons" id="menu-principal">
+        <div id="editar-empleado" class="menu-option card">
+            <div class="card-image">
+                <img src="/icons/edit-user.svg" alt="Editar Empleado">
+            </div>
+            <div class="card-content">
+                <p class="card-title">Editar Empleado</p>
+            </div>
+        </div>
+    
+        <div id="crear-empleado" class="menu-option card">
+            <div class="card-image">
+                <img src="/icons/add-user.svg" alt="Crear Empleado">
+            </div>
+            <div class="card-content">
+                <p class="card-title">Crear Empleado</p>
+            </div>
+        </div>
+    
+        <div id="registrar-equipo" class="menu-option card">
+            <div class="card-image">
+                <img src="/icons/clock.svg" alt="Registrar Equipo">
+            </div>
+            <div class="card-content">
+                <p class="card-title">Registrar Equipo</p>
+                <p></p>
+            </div>
+        </div>
+      </div>
+      <!-- FIN MENÚ PRINCIPAL -->
+
+      <!-- SECCIÓN: CREAR EMPLEADO (reemplaza al modal-create-empleado) -->
+      <div id="seccion-crear" style="display: none;">
+        <h2>Registro de Empleado</h2>
+        <br><br>
+        <form id="form-create-empleado" method="POST" enctype="multipart/form-data">
+            <label>Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br><br>
+            <label>Puesto:</label>
+            <input type="text" id="puesto" name="puesto" required>
+            <br><br>
+            <label>Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label>Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <label>Role:</label>
+            <select id="role" name="role" required>
+                <option value="empleado">Empleado</option>
+                <option value="admin">Admin</option>
+            </select>
+            <br><br>
+            <label>Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            <br><br>
+            <button type="submit">Crear Empleado</button>
+        </form>
+        
+
+        <!-- Botón para volver al menú principal -->
+        <button id="btn-volver-crear">Volver</button>
+      </div>
+      <!-- FIN SECCIÓN CREAR EMPLEADO -->
+
+
+      <!-- SECCIÓN: EDITAR EMPLEADO (reemplaza al modal-editar-empleado) -->
+      <div id="seccion-editar" style="display: none;">
+        <!-- SELECCIÓN de empleado -->
+        <h2>Seleccionar Empleado</h2>
+        <select id="lista-empleados"></select>
+
+        <!-- Muestra el ID y nombre del empleado seleccionado -->
+        <p id="empleado-seleccionado" style="font-weight: bold; margin-top: 10px;"></p>
+
+        <!-- Opciones de edición -->
+        <div id="opciones-edicion" style="display: none; margin-top: 20px;">
+          <button id="btn-crear-tarea">Crear tareas</button>
+          <button id="btn-editar-tarea">Editar tareas</button>
+          <button id="btn-seleccionar-reloj">Seleccionar reloj</button>
+          <button id="btn-datos-empleado">Datos del empleado</button>
+          <button id="btn-horario-actual">Horario actual</button>
+          <button class="delete-button" id="btn-eliminar-empleado">Eliminar empleado</button>
+          <button id="btn-volver-editar">Volver</button>
+        </div>
+      </div>
+      <!-- FIN SECCIÓN EDITAR EMPLEADO -->
+
+
+      <!-- SECCIÓN: REGISTRAR EQUIPO (placeholder de ejemplo) -->
+      <div id="seccion-registrar" style="display: none;">
+        <h2>Registrar Equipo</h2>
+        <p>Aquí podrías poner el formulario o la lógica de “Registrar Equipo”.</p>
+
+        <!-- Botón para volver al menú principal -->
+        <button id="btn-volver-registrar">Volver</button>
+      </div>
+      <!-- FIN SECCIÓN REGISTRAR EQUIPO -->
+
+      <!-- ******************************************************************** -->
+      <!-- SIGUEN TUS MODALES (no se tocan), para crear/editar tareas o datos -->
+      <!-- ******************************************************************** -->
+
+      <!-- Modal crear tarea (lo dejamos como modal) -->
+      <div id="modal-create-task" class="modal">
+        <h2>Registro de Tarea</h2>
+        <form id="tareaForm">
+          <label>Nombre de la tarea:</label>
+          <input type="text" id="nombreTarea" required><br><br>
+
+          <label>Descripción:</label>
+          <input type="text" id="descripcionTarea" required><br><br>
+
+          <label>Hora de inicio:</label>
+          <input type="time" id="horaInicio" required><br><br>
+
+          <label>Hora de finalización:</label>
+          <input type="time" id="horaFin" required><br><br>
+
+          <h3>Días de la Semana</h3>
+          <label><input type="checkbox" class="dia-checkbox" value="domingo"> Domingo</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="lunes"> Lunes</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="martes"> Martes</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="miercoles"> Miércoles</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="jueves"> Jueves</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="viernes"> Viernes</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="sabado"> Sábado</label><br><br>
+
+          <button type="button" id="modal-edit-personal-data_btn">Asignar Tarea</button>
+        </form>
+      </div>
+
+      <!-- Modal editar tarea (lo dejamos como modal) -->
+      <div id="modal-edit-task" class="modal">
+        <h2>Editar de Tarea</h2>
+        <form id="tareaEditForm">
+          <label>Nombre de la tarea:</label>
+          <input type="text" id="nombreTarea"><br><br>
+
+          <label>Descripción:</label>
+          <input type="text" id="descripcionTarea"><br><br>
+
+          <label>Hora de inicio:</label>
+          <input type="time" id="horaInicio"><br><br>
+
+          <label>Hora de finalización:</label>
+          <input type="time" id="horaFin"><br><br>
+
+          <h3>Días de la Semana</h3>
+          <label><input type="checkbox" class="dia-checkbox" value="0"> Domingo</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="1"> Lunes</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="2"> Martes</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="3"> Miércoles</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="4"> Jueves</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="5"> Viernes</label><br>
+          <label><input type="checkbox" class="dia-checkbox" value="6"> Sábado</label><br><br>
+
+          <button type="button" onclick="editarTarea()">Asignar Tarea</button>
+        </form>
+      </div>
+
+      <!-- Modal editar datos personales (lo dejamos como modal) -->
+      <div id="modal-edit-personal-data" class="modal">
+        <h2>Editar información</h2>
+        <form id="form-edit-personal-data" enctype="multipart/form-data">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre_dp" name="nombre" required>
+          <br><br>
+
+          <label for="puesto">Puesto:</label>
+          <input type="text" id="puesto_dp" name="puesto" required>
+          <br><br>
+          <label for="username">username:</label>
+          <input type="text" id="username_dp" name="username" required>
+          <br><br>
+          <label for="password">password:</label>
+          <input type="password" id="password_dp" name="password_dp" required>
+          <br><br>
+          
+          <label for="role">role:</label>
+          <select name="role_dp" id="role_dp">
+            <option value="administrador">administrador</option>
+            <option value="empleado">empleado</option>
+          </select>
+          <br><br>
+
+          <label for="imagen">Imagen:</label>
+          <!--input type="file" id="imagen_dp" name="imagen" accept="image/*" onchange="previewImage(event)" onclick="alert('No soportado aún')"-->
+          <br><br>
+          
+
+          <img id="preview" src="" alt="Vista previa de la imagen" style="max-width: 200px; display: none;">
+          <br><br>
+
+          <button type="button" id="btn_edit_dp">Enviar</button>
+        </form>
+      </div>
+      <!-- FIN MODALES -->
+
+    </div> <!-- Fin #contenido-fade -->
+  </div> <!-- Fin .container -->
+
+</body>
+</html>

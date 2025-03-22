@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "role": "administrador",
+      "empleado_id": "1"
+    },
+    {
+      "username": "Eduardo",
+      "password": "123456",
+      "role": "empleado",
+      "empleado_id": 2
+    },
+    {
+      "username": "Jonalgon",
+      "password": "123456",
+      "role": "empleado",
+      "empleado_id": 3
+    },
+    {
+      "username": "Angel",
+      "password": "123456",
+      "role": "empleado",
+      "empleado_id": 4
+    }
+  ]
+}
